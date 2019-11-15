@@ -1,0 +1,216 @@
+.container {
+  background-color: #f5f5f5;
+}
+
+.detail-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.detail-img {
+  width: 200rpx;
+  height: 300rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 2px 2px 3px #e3e3e3;
+}
+
+.detail-title {
+  font-weight: bold;
+  font-size: 38rpx;
+  margin-bottom: 10rpx;
+  color: #2f2f2f;
+}
+
+.detail-author {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.common-container {
+  margin-top: 28rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+}
+
+.common-title {
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 800;
+  color: #2f2f2f;
+  margin-bottom: 20rpx;
+}
+
+.comment-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.comment-box c-tag {
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.comment-num {
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: #aaa;
+}
+
+/* 改变前两个标签颜色，方式比较强硬，直接改变组件内部view（好用，不推荐） */
+
+/* .comment-box > c-tag:nth-child(1) > view {
+  background-color: #fffbdd;
+}
+
+.comment-box > c-tag:nth-child(2) > view {
+  background-color: #eefbff;
+} */
+
+/* 通过外部样式类解决前两个标签颜色 */
+
+.bg-color1 {
+  background-color: #fffbdd !important;
+}
+
+.bg-color2 {
+  background-color: #eefbff !important;
+}
+
+.content {
+  font-weight: 500;
+  font-size: 28rpx;
+  text-indent: 50rpx; /*设置首行缩进*/
+  color: #333;
+  line-height: 40rpx;
+  letter-spacing: 2rpx;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  margin-bottom: 100rpx;
+}
+
+.info-title {
+  display: flex;
+  flex-direction: column;
+  width: 100rpx;
+  color: #aaa;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  color: #777;
+}
+
+.info-title text {
+  margin-bottom: 10rpx;
+}
+
+.info-text text {
+  margin-bottom: 10rpx;
+}
+
+.footer-container {
+  height: 100rpx;
+  box-shadow: 1px -1px 1px #e3e3e3;
+  position: fixed;
+  bottom: 0;
+  width: 690rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30rpx;
+  justify-content: space-between;
+}
+
+.fake-input {
+  width: 460rpx;
+  height: 60rpx;
+  border: 1px solid #999;
+  border-radius: 15px;
+  line-height: 60rpx;
+  padding-left: 20rpx;
+}
+
+.fake-input text {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.like-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.like {
+  margin-right: 30rpx;
+  margin-top: 10rpx;
+}
+
+.real-container {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  width:100%;
+  z-index: 999;
+}
+
+.real-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1px solid #f5f5f5;
+  border-top:1px solid #f5f5f5;
+  width:100%;
+}
+
+.real-header text{
+  padding: 25rpx;
+}
+
+.real-header > text:first-child{
+  font-size: 28rpx;
+  color:#bbb;
+}
+
+.cancel{
+  color: #666;
+}
+
+.real-container > .comment-box{
+  padding: 25rpx 25rpx 0 25rpx;
+}
+
+.real-input{
+  width: 690rpx;
+  margin: 30rpx auto;
+  height: 56rpx;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding-left: 25rpx;
+  font-size: 30rpx;
+}
+
+.no-comment{
+  text-align: center;
+  color: #999;
+}

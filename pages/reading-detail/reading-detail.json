@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "c-like": "/components/like/index",
+    "c-movie": "/components/reading/movie/index",
+    "c-music": "/components/reading/music/index",
+    "c-verse": "/components/reading/verse/index",
+    "c-nodate": "/components/nodate/index"
+  }
+}

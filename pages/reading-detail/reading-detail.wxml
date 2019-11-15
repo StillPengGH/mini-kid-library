@@ -1,0 +1,14 @@
+<view class="reading-container">
+  <view class="header">
+    <!-- 刊号、日期 -->
+    <c-nodate index="{{latestData.index}}" />
+    <!-- 点赞 -->
+    <c-like class="header-like" bind:likeEvent="onLikeEvent" count="{{favNums}}" isLike="{{likeStatus}}" />
+  </view>
+  <!-- 电影、音乐、诗句模板 -->
+  <c-movie hidden="{{latestData.type!=100}}" content="{{latestData.content}}" imgSrc="{{latestData.image}}" />
+  <!-- 这里用wx:if是因为可以触发music组件的完成生命周期函数（用于控制音乐播放），hidden无法触发，因为不是重新渲染music -->
+  <c-music wx:if="{{latestData.type==200}}" content="{{latestData.content}}" imgSrc="{{latestData.image}}" 
+           musicUrl="{{latestData.url}}" musicTitle="{{latestData.title}}"/>
+  <c-verse hidden="{{latestData.type!=300}}" content="{{latestData.content}}" imgSrc="{{latestData.image}}" />
+</view>

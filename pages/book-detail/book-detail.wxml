@@ -1,0 +1,103 @@
+<!-- 引入外部脚本语言.wxs文件 -->
+<wxs src="../../utils/filter.wxs" module="filter" />
+
+<!-- 图书详情页面 -->
+<view class="container">
+  <!-- 详情 -->
+  <view class="detail-container">
+    <image class="detail-img" src="{{detailData.image}}"></image>
+    <text class="detail-title">{{detailData.title}}</text>
+    <text class="detail-author">{{detailData.author}}</text>
+  </view>
+
+  <!-- 短评 -->
+  <view class="common-container">
+    <text class="common-title">短评</text>
+    <text class="no-comment" wx:if="{{commentData.length == 0}}">还没有短评</text>
+    <view wx:else class="comment-box">
+      <!-- 使用wxs脚本语言（.wxs文件形式）控制标签过多，返回指定个数 -->
+      <block wx:for="{{filter.getCommentsByLength(commentData,10)}}" wx:key="content">
+        <!-- bg-color-class 为外部样式类，并结合了wxs脚本语言，控制前两个标签背景颜色 -->
+        <c-tag content="{{item.content}}" bg-color-class="{{tool.changeBgColor(index)}}">
+          <text class="comment-num" slot="after">{{'+'+item.nums}}</text>
+        </c-tag>
+      </block>
+    </view>
+  </view>
+
+  <!-- 内容简介 -->
+  <view class="common-container">
+    <text class="common-title">内容简介</text>
+    <!-- 想让&nbsp;转义成空格，需要加decode=true -->
+    <text class="content" decode="{{true}}">{{filter.formatContent(detailData.summary)}}</text>
+  </view>
+
+  <!-- 书本信息 -->
+  <view class="common-container">
+    <text class="common-title">书本信息</text>
+    <view class="book-info">
+      <view class="info-title">
+        <text class="line-title">出版社</text>
+        <text class="line-title">出版年</text>
+        <text class="line-title">页数</text>
+        <text class="line-title">定价</text>
+        <text class="line-title">装帧</text>
+      </view>
+      <view class="info-text">
+        <text class="line-text">{{detailData.publisher}}</text>
+        <text class="line-text">{{detailData.pubdate}}</text>
+        <text class="line-text">{{detailData.pages}}</text>
+        <text class="line-text">{{detailData.price}}</text>
+        <text class="line-text">{{detailData.binding}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部评论 -->
+<view class="footer-container">
+  <view class="fake-input" bind:tap="showRealInput">
+    <text>输入短评，不能超过12个字</text>
+  </view>
+  <view class="like-box">
+    <c-like count="{{likeData.fav_nums}}" class="like" isLike="{{likeData.like_status}}" 
+      bind:likeEvent="onLikeEvent"></c-like>
+  </view>
+</view>
+
+<!-- 真实输入评论层 -->
+<view class="real-container" wx:if="{{isShow}}">
+  <view class="real-header">
+    <text wx:if="commentData==true">仅可以点标签+1</text>
+    <text wx:else>暂无短评</text>
+    <text class="cancel" bind:tap="closeRealInput">取消</text>
+  </view>
+  <view class="comment-box">
+    <block wx:for="{{filter.getCommentsByLength(commentData,3)}}" wx:key="content">
+      <c-tag bind:addCommentEvent="addComment" content="{{item.content}}" bg-color-class="{{tool.changeBgColor(index)}}">
+        <text class="comment-num" slot="after">{{'+'+item.nums}}</text>
+      </c-tag>
+    </block>
+  </view>
+  <input bindconfirm="addComment" class="real-input" placeholder='短评最多12个字'></input>
+</view>
+
+<!-- 遮罩层 -->
+<c-mask wx:if="{{isShow}}"></c-mask>
+
+<!-- 内部使用wxs脚本语言 -->
+<wxs module="tool">
+  var changeBgColor = function(index){
+    if(index == 0){
+      return 'bg-color1';
+    }
+    if(index == 1){
+      return 'bg-color2';
+    }
+    return '';
+  }
+
+  module.exports = {
+    changeBgColor:changeBgColor
+  }
+</wxs>

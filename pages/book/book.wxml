@@ -1,0 +1,22 @@
+<view class="container">
+  <!-- 假搜索框 -->
+  <view class="header" wx:if="{{!isShowSearch}}">
+    <view bind:tap="showSearch" class="box">
+      <image src="../../images/icon/search.png"></image>
+      <text>搜索书籍</text>
+    </view>
+  </view>
+
+  <!-- 精选书籍 -->
+  <view class="sub-container" wx:if="{{!isShowSearch}}">
+    <image class="head-img" src="../../images/book/quality.png"></image>
+    <view class="books-container">
+      <block wx:for="{{books}}" wx:for-item="item" wx:key="id">
+        <c-book book="{{item}}"></c-book>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- 真搜索组件 -->
+<c-search wx:if="{{isShowSearch}}" isReachBottom="{{isLoadMore}}" isRefresh="{{isRefreshStr}}" bind:cancelEvent="hideSearch"></c-search>

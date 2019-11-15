@@ -1,0 +1,8 @@
+<view class="container" bind:tap="onTap">
+  <view class="head">
+    <c-tag content="{{typeText}}" tag-class="tag"></c-tag>
+    <c-like class="like" read-only="{{true}}" is-like="{{true}}" count="{{favor.fav_nums}}"></c-like>
+  </view>
+  <image class="{{favor.type==200?'music-img':'other-img'}}" src="{{favor.image}}"></image>
+  <view class="text">{{favor.content}}</view>
+</view>

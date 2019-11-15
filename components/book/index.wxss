@@ -1,0 +1,60 @@
+.book-container{
+  width: 240rpx;
+  height: 360rpx;
+  position: relative;
+  border-radius: 2px;
+  box-shadow: 2px 2px 3px #e3e3e3;
+  overflow: hidden;
+}
+
+.book-img{
+  width: 240rpx;
+  height: 360rpx;
+}
+
+.book-description{
+  width: 222rpx;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  padding: 10rpx 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.book-title{
+  font-size:24rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 8rpx;
+}
+
+.book-author{
+  font-size: 20rpx;
+  color: #999;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+
+.book-like{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.like-num{
+  font-size: 20rpx;
+  color: #666666;
+  margin-right: 6rpx;
+}
+
+.like-text{
+  font-size: 20rpx;
+  color: #666666;
+}
+

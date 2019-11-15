@@ -1,0 +1,24 @@
+.movie-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-img{
+  width: 750rpx;
+  height: 500rpx;
+}
+
+.movie-tag{
+  width: 46rpx;
+  height: 142rpx;
+  position: relative;
+  right:310rpx;
+  bottom:58rpx;
+}
+
+.movie-content{
+  max-width: 540rpx; /*最大宽度为540，可以让文字一直居中*/
+  font-size: 36rpx;
+  color: #333;
+}

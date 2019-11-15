@@ -1,0 +1,24 @@
+.verse-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.verse-img{
+  width: 750rpx;
+  height: 500rpx;
+}
+
+.verse-tag{
+  width: 46rpx;
+  height: 142rpx;
+  position: relative;
+  right:310rpx;
+  bottom:58rpx;
+}
+
+.verse-content{
+  max-width: 540rpx; /*最大宽度为540，可以让文字一直居中*/
+  font-size: 36rpx;
+  color: #333;
+}

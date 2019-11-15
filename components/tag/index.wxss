@@ -1,0 +1,10 @@
+.tag-container{
+  padding: 4rpx 12rpx;
+  background-color: #f5f5f5;
+  color: #666;
+  font-size: 28rpx;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

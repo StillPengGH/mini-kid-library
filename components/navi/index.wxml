@@ -1,0 +1,7 @@
+<view class="navi-container">
+  <!-- 如果是最后一期，即最新一期，向左箭头变灰 -->
+  <image class="arrow" bind:tap="getLaterReading" src="{{isLast?leftDisSrc:leftSrc}}"></image>
+  <text class="navi-content">{{title}}</text>
+  <!-- 如果是第一期的话，向右箭头变灰 -->
+  <image class="arrow" bind:tap="getBeforeReading" src="{{isFirst?rightDisSrc:rightSrc}}"></image>
+</view>

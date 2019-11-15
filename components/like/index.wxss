@@ -1,0 +1,20 @@
+.like-container{
+  display: inline-flex; /*设置为inline-flex相当于自适应宽度，默认flex是沾满整行，即block*/
+  flex-direction: row;
+  padding: 10rpx;
+}
+
+.like-img{
+  width: 32rpx;
+  height: 28rpx;
+}
+
+.like-text{
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color: #bbb;
+  position: relative;
+  bottom: 10rpx;
+  left: 6rpx;
+  
+}

@@ -1,0 +1,10 @@
+<!-- 
+  短评组件 
+  1.有可能有短评数量
+  2.有可能没有
+  通过slot控制，让组件更加灵活
+-->
+<view class="tag-container bg-color-class mt-class tag-class" bind:tap="addCustomEvent">
+  <text class="tag-text">{{content}}</text>
+  <slot name="after"></slot>
+</view>

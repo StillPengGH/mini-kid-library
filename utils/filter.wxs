@@ -1,0 +1,23 @@
+// 得到指定个数的标签
+var getCommentsByLength = function(comments, length) {
+  if (comments && comments.length > 0) {
+    var returnComments = comments.slice(0, length);
+    return returnComments;
+  } else {
+    return comments;
+  }
+}
+
+// 格式化简介（把\n转成换行）
+var formatContent = function(content) {
+  if (!content) {
+    return
+  }
+  var reg = getRegExp('\\\\n', 'g'); //全局匹配\\n
+  return content.replace(reg, '\n' +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+}
+
+module.exports = {
+  getCommentsByLength: getCommentsByLength,
+  formatContent: formatContent
+}

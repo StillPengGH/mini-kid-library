@@ -1,0 +1,53 @@
+<view class="search-container">
+  <!-- 搜索框 -->
+  <view class="search-header">
+    <view class="search-input-box">
+      <image class="search-icon" src="../images/search/search.png"></image>
+      <input class="search-input" placeholder="书籍名" placeholder-class="pl-color" auto-focus="{{true}}"
+        value="{{searchVal}}" bind:confirm="searchBooks"></input>
+      <image class="search-clear" bind:tap="clearInputVal" src="../images/search/cancel.png"></image>
+    </view>
+    <text class="search-cancel" bind:tap="onCancel">取消</text>
+  </view>
+
+  <view wx:if="{{!isSearching}}">
+    <!-- 历史搜索 -->
+    <view class="content histroy">
+      <view class="line-title">
+        <view class="line"></view>
+        <view class="title">历史搜索</view>
+      </view>
+      <view class="his-words">
+        <block wx:for="{{historyWords}}" wx:key="1">
+          <c-tag class="his-word" content="{{item}}" mt-class="mt20" bind:addCommentEvent="searchBooks"></c-tag>
+        </block>
+      </view>
+    </view>
+
+    <!-- 热门搜索 -->
+    <view class="content hot">
+      <view class="line-title">
+        <view class="line"></view>
+        <view class="title">热门搜索</view>
+      </view>
+      <view class="his-words">
+        <block wx:for="{{hotWords}}" wx:key="1">
+          <c-tag class="his-word" content="{{item}}" mt-class="mt20" bind:addCommentEvent="searchBooks"></c-tag>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- 图书列表 -->
+  <view class="books-container" wx:if="{{isSearching}}">
+    <block wx:for="{{books}}" wx:key="1">
+      <c-book class="book" book="{{item}}" isLike="{{false}}"></c-book>
+    </block>
+  </view>
+
+  <!-- 加载中图标(中间) -->
+  <c-loading class="loading-center" wx:if="{{loadingCenter}}"/>
+  <!-- 加载中图标(底部) -->
+  <c-loading class="loading-bottom" wx:if="{{loadingBottom}}"/>
+  <!-- 没有搜索到任何内容提示 -->
+  <text wx:if="{{noneResult}}" class="empty-tip">没有搜索到书籍</text>
+</view>

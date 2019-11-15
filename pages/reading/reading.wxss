@@ -1,0 +1,28 @@
+.reading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60rpx;
+  margin-bottom: 40rpx;
+  margin-top: 20rpx;
+}
+
+.header-like {
+  position: relative;
+  top: 12rpx;
+}
+
+.navi{
+  position: absolute;
+  bottom: 60rpx;
+}

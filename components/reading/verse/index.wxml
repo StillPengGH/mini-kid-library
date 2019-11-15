@@ -1,0 +1,5 @@
+<view hidden="{{hidden}}" class="verse-container">
+  <image class="verse-img" src="{{imgSrc}}"></image>
+  <image class="verse-tag" src="../../images/reading/verse/verse_tag.png"></image>
+  <text class="verse-content">{{content}}</text>
+</view>

@@ -1,0 +1,38 @@
+.nodate-container{
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+}
+
+.number-flg{
+  font-size: 32rpx;
+}
+
+.number-text{
+  font-size:60rpx;
+  margin-right: 10rpx;
+}
+
+.line{
+  display: inline-block;
+  height: 46rpx;
+  width: 2rpx;
+  background: #333;
+  margin-right: 10rpx;
+}
+
+.nodate-date{
+  display: flex;
+  flex-direction: column;
+  margin-top: 12rpx;
+}
+
+.date-month{
+  font-size:24rpx;
+  line-height: 24rpx;
+}
+
+.date-year{
+  font-size:24rpx;
+}

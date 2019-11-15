@@ -1,0 +1,11 @@
+<view class="nodate-container">
+  <view class="nodate-number">
+    <text class="number-flg">No.</text>
+    <text class="number-text">{{_index}}</text>
+    <view class="line"></view>
+  </view>
+  <view class="nodate-date">
+    <text class="date-month">{{month}}</text>
+    <text class="date-year">{{year}}</text>
+  </view>
+</view>
