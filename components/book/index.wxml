@@ -3,9 +3,9 @@
   <view class="book-description">
     <text class="book-title">{{book.title}}</text>
     <text class="book-author">{{book.author}}</text>
-    <view class="book-like">
-      <text class="like-num">{{book.fav_nums}}</text>
-      <text class="like-text" wx:if="{{isLike}}">喜欢</text>
+    <view class="book-like" wx:if="{{isLike}}">
+      <text class="like-num"  >{{book.like_nums}}</text>
+      <text class="like-text" >喜欢</text>
     </view>
   </view>
 </view>

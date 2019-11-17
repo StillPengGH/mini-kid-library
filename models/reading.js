@@ -16,7 +16,7 @@ class Reading extends HTTP {
     let storageData = wx.getStorageSync('index_' + (currentIndex-1));
     if (!storageData){
       this.request({
-        url: '/classic/' + currentIndex + '/previous'
+        url: '/learning/' + currentIndex + '/previous'
       }).then(data=>{
         let index = data.index;
         // 将期刊号放入缓存中
@@ -37,7 +37,7 @@ class Reading extends HTTP {
     let storageData = wx.getStorageSync('index_' + (currentIndex + 1));
     if (!storageData){
       this.request({
-        url: '/classic/' + currentIndex + '/next'
+        url: '/learning/' + currentIndex + '/next'
       }).then(data=>{
         let index = data.index;
         this._setIndexToStorage(index);
@@ -64,13 +64,13 @@ class Reading extends HTTP {
   // 获取的喜欢的电影、句子、音乐
   getMyFavor(){
     return this.request({
-      url:'/classic/favor'
+      url:'/learning/like'
     })
   }
 
   getById(id, type) {
     return this.request({
-      url: `/classic/${type}/${id}`
+      url: `/learning/${type}/${id}`
     })
   }
 

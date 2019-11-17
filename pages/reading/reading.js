@@ -18,22 +18,17 @@ Page({
     isLast: true,
     lastIndex: 0,
     latestData: {},
-    favNums: 0,
+    likeNums: 0,
     likeStatus: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onShow: function(options) {
-    // 获取最新一期的期刊
+    // 获取最新一期的学习期刊
     readingModel.getLatest().then(data => {
-      console.log(data);
-      // setData用于数据更新，更新data中的数据。
       this.setData({
         latestData: data,
         lastIndex: data.index,
-        favNums: data.fav_nums,
+        likeNums: data.like_nums,
         likeStatus: data.like_status
       })
     });
@@ -49,7 +44,7 @@ Page({
   },
 
   /**
-   * 用来监听右箭头，用来获取前一期期刊内容
+   * 用来监听右箭头，用来获取前一期学习期刊内容
    */
   getBefore: function(event) {
     // 获取当前页面期刊号
@@ -87,7 +82,7 @@ Page({
   _getLikeInfo: function(id, type) {
     likeModel.getLikeInfo(id,type).then(data=>{
       this.setData({
-        favNums: data.fav_nums,
+        likeNums: data.like_nums,
         likeStatus: data.like_status
       });
     });

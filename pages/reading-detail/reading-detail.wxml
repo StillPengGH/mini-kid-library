@@ -3,7 +3,7 @@
     <!-- 刊号、日期 -->
     <c-nodate index="{{latestData.index}}" />
     <!-- 点赞 -->
-    <c-like class="header-like" bind:likeEvent="onLikeEvent" count="{{favNums}}" isLike="{{likeStatus}}" />
+    <c-like class="header-like" bind:likeEvent="onLikeEvent" count="{{likeNums}}" isLike="{{likeStatus}}" />
   </view>
   <!-- 电影、音乐、诗句模板 -->
   <c-movie hidden="{{latestData.type!=100}}" content="{{latestData.content}}" imgSrc="{{latestData.image}}" />

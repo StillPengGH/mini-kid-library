@@ -30,7 +30,7 @@ class Book extends HTTP {
   // 4.根据id获取书籍的点赞信息
   getLikeById(bookId) {
     return this.request({
-      url: `/book/${bookId}/favor`
+      url: `/book/${bookId}/like`
     });
   }
 
@@ -53,6 +53,7 @@ class Book extends HTTP {
       method: 'GET',
       data: {
         start,
+        count: 20,
         summary,
         q: keyword
       }
@@ -60,9 +61,9 @@ class Book extends HTTP {
   }
 
   // 7.获取喜欢书籍数量
-  getLikeNum(){
+  getLikeNum() {
     return this.request({
-      url:'/book/favor/count'
+      url: '/book/like/count'
     })
   }
 }

@@ -89,7 +89,7 @@ Component({
       // 获取搜索关键字，1.value来自input输入框 2.content来自点击标签
       let keyword = event.detail.value || event.detail.content;
 
-      if (!keyword.trim()) { // 如果关键字为空，不发送http请求数据，
+      if (!keyword) { // 如果关键字为空，不发送http请求数据，
         this._hideLoadingCenter(); // 关掉加载中图标
         return;
       }

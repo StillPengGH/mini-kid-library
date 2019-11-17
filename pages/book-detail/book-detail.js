@@ -39,6 +39,11 @@ Page({
       commentPromise,
       likePromise
     ]).then((data)=>{
+      let pubdate = data[0].pubdate;
+      if(pubdate && pubdate.length>8){
+        pubdate = pubdate.substring(0,7);
+      }
+      data[0].pubdate = pubdate;
       this.setData({
         detailData:data[0],
         commentData:data[1].comments,

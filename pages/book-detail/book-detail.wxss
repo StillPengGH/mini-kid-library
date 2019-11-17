@@ -103,7 +103,7 @@
 .info-title {
   display: flex;
   flex-direction: column;
-  width: 100rpx;
+  width: 120rpx;
   color: #aaa;
 }
 

@@ -38,17 +38,19 @@
     <view class="book-info">
       <view class="info-title">
         <text class="line-title">出版社</text>
-        <text class="line-title">出版年</text>
-        <text class="line-title">页数</text>
+        <text class="line-title">出版时间</text>
+        <text class="line-title">包装</text>
         <text class="line-title">定价</text>
-        <text class="line-title">装帧</text>
+        <text class="line-title">ISBN</text>
+        <text class="line-title">所属分类</text>
       </view>
       <view class="info-text">
         <text class="line-text">{{detailData.publisher}}</text>
         <text class="line-text">{{detailData.pubdate}}</text>
-        <text class="line-text">{{detailData.pages}}</text>
+        <text class="line-text">{{detailData.package}}</text>
         <text class="line-text">{{detailData.price}}</text>
-        <text class="line-text">{{detailData.binding}}</text>
+        <text class="line-text">{{detailData.isbn}}</text>
+        <text class="line-text">{{detailData.category}}</text>
       </view>
     </view>
   </view>
@@ -60,7 +62,7 @@
     <text>输入短评，不能超过12个字</text>
   </view>
   <view class="like-box">
-    <c-like count="{{likeData.fav_nums}}" class="like" isLike="{{likeData.like_status}}" 
+    <c-like count="{{likeData.like_nums}}" class="like" isLike="{{likeData.like_status}}" 
       bind:likeEvent="onLikeEvent"></c-like>
   </view>
 </view>

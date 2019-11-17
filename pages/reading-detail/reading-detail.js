@@ -19,7 +19,7 @@ Page({
    */
   data: {
     latestData: {},
-    favNums: 0,
+    likeNums: 0,
     likeStatus: false
   },
 
@@ -32,7 +32,7 @@ Page({
     readingModel.getById(id,type).then(data=>{
       this.setData({
         latestData: data,
-        favNums: data.fav_nums,
+        likeNums: data.like_nums,
         likeStatus: data.like_status
       })
     });
@@ -44,9 +44,6 @@ Page({
    */
   onLikeEvent: function (event) {
     let likeFlg = event.detail.likeFlg;
-    console.log(likeFlg);
-    console.log(this.data.latestData.id);
-    console.log(this.data.latestData.type);
     // 进行喜欢设置
     likeModel.setLike(likeFlg, this.data.latestData.id, this.data.latestData.type);
   },
